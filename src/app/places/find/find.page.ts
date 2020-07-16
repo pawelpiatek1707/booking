@@ -10,11 +10,13 @@ import { PlacesService } from '../places.service';
 export class FindPage implements OnInit {
 
   places: Place[] = [];
+  loadedPlaces: Place[];
 
   constructor(private placesService: PlacesService) { }
 
   ngOnInit() {
     this.places = this.placesService.places;
+    this.loadedPlaces = this.places.slice(1);
   }
 
 
